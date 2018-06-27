@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_BANGCOCK:
                     //mTextMessage.setText(R.string.title_BANGCOCK);
                     Toast.makeText(getApplicationContext(), "SAWADIKAP!", Toast.LENGTH_SHORT).show();
-                    //Intent intent = new Intent(this, BangcockActivity.class);
-                    //BangcockActivity();
+                    startActivity(new Intent(MainActivity.this, BangcockActivity.class));
                     return true;
             }
             return false;
