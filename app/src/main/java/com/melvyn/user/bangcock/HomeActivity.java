@@ -1,4 +1,4 @@
-package com.example.user.bangcock;
+package com.melvyn.user.bangcock;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -54,8 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         //MY BOTTOM NAVIGATION
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
+        navigation.setSelectedItemId(R.id.navigation_home);
 
         //Welcome to Bangkok text
         TextView text_title = (TextView) findViewById(R.id.textView);

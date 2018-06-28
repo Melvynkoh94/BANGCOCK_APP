@@ -1,4 +1,4 @@
-package com.example.user.bangcock;
+package com.melvyn.user.bangcock;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         //MY BOTTOM NAVIGATION
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_CALCULATOR);
 
         //DARK SWITCH
         dark_switch = (Switch) findViewById(R.id.switch1);

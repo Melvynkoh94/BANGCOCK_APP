@@ -1,4 +1,4 @@
-package com.example.user.bangcock;
+package com.melvyn.user.bangcock;
 
 import android.content.Context;
 import android.content.Intent;
@@ -69,6 +69,7 @@ public class BangcockActivity extends AppCompatActivity {
         //MY BOTTOM NAVIGATION
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_BANGCOCK);
 
 
         btn_CONVERT = (Button)findViewById(R.id.btn_Convert);
