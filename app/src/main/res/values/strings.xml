@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">BANGCOCK</string>
-    <string name="title_home">Home</string>
-    <string name="title_RENMINBI">RENMINBI</string>
+    <string name="app_name">BANGCOCK SABAI SABAI</string>
+    <string name="title_home">HOME</string>
+    <string name="title_calculator">CALCULATOR</string>
     <string name="title_BANGCOCK">BANGCOCK</string>
     <string name="SGD_hint">SGD here</string>
     <string name="THB_hint">THAI BUTT here</string>
 
     <!-- Added this cos TextInputLayout in activity_bangcock.xml is making noise, REF: https://stackoverflow.com/questions/41303347/couldnt-resolve-resource-id-visible-when-using-textinputlayout-->
-    <item name="masked" type="id"/>
-    <item name="visible" type="id"/>
+    <item name="masked" type="id" />
+    <item name="visible" type="id" />
 </resources>

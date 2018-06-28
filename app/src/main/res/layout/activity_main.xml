@@ -34,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edt1"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="42dp"
         android:layout_toStartOf="@+id/button2"
         android:text="1" />
 
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button5"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="21dp"
         android:layout_toStartOf="@+id/button3"
         android:text="2" />
 
@@ -121,11 +121,8 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/edt1"
-        android:layout_alignRight="@+id/edt1"
         android:layout_alignTop="@+id/button3"
-        android:layout_marginLeft="46dp"
-        android:layout_marginStart="46dp"
+        android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/button3"
         android:text="+" />
 
@@ -147,8 +144,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonsub"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
         android:layout_alignStart="@+id/buttonsub"
         android:layout_below="@+id/buttonsub"
         android:text="*" />
@@ -206,6 +203,15 @@
         android:layout_marginTop="37dp"
         android:text="=" />
 
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttoneql"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:checked="false"
+        android:text="I like it dark " />
 
 
     <!--    this is for the message that appears at the centre of the page

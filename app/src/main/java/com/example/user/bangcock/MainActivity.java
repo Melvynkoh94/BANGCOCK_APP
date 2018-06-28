@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
@@ -14,7 +16,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    private Switch dark_switch;
 
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
@@ -27,21 +29,21 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_home);
+                    Toast.makeText(getApplicationContext(), "Where is your home?", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
                     return true;
-                case R.id.navigation_RENMINBI:
-                    //mTextMessage.setText(R.string.title_RENMINBI);
-                    Toast.makeText(getApplicationContext(), "NI HAO!", Toast.LENGTH_SHORT).show();
-                    return true;
+
                 case R.id.navigation_BANGCOCK:
-                    //mTextMessage.setText(R.string.title_BANGCOCK);
                     Toast.makeText(getApplicationContext(), "SAWADIKAP!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, BangcockActivity.class));
+                    return true;
+
+                case R.id.navigation_CALCULATOR:
+                    Toast.makeText(getApplicationContext(), "SINE COSINE TANGENT!", Toast.LENGTH_SHORT).show();
                     return true;
             }
             return false;
@@ -54,10 +56,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //MY BOTTOM NAVIGATION
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        //DARK SWITCH
+        dark_switch = (Switch) findViewById(R.id.switch1);
+        dark_switch.setChecked(false);
+        dark_switch.setTextOn("DARK");
+        dark_switch.setTextOff("LIGHT");
+
+
+        dark_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (dark_switch.isChecked()){
+                    Toast.makeText(getApplicationContext(), "CHECKED!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "UNCHECKED!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+        Boolean switchState = dark_switch.isChecked(); //check current state the switch TRUE or FALSE
+        //dark_switch.setOnClickListener();
 
         //MY CALCULATOR REF: https://crunchify.com/how-to-create-simple-calculator-android-app-using-android-studio/
         button0 = (Button) findViewById(R.id.button0);
