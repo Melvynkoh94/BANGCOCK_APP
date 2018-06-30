@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import java.text.DecimalFormat;
@@ -17,6 +18,7 @@ import java.util.Locale;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 
 public class BangcockActivity extends AppCompatActivity {
@@ -53,13 +55,14 @@ public class BangcockActivity extends AppCompatActivity {
         }
     };
 
-
+    //close the keyboard after you pressed CONVERT button
     public void dismissKeyboard(){
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,12 +90,17 @@ public class BangcockActivity extends AppCompatActivity {
                     dismissKeyboard();
                 }
 
-                if (TextUtils.isEmpty(EDITTEXT_SGD.getText())) {
+                else if (TextUtils.isEmpty(EDITTEXT_SGD.getText())) {
                     THBtext = Double.parseDouble(EDITTEXT_BKK.getText().toString());
                     SGDtext = THBtext * THB2SGD;
                     EDITTEXT_SGD.setText(currencyFormatter.format(SGDtext) + " SGD");
                     EDITTEXT_BKK.setText(currencyFormatter.format(THBtext) + " BUTTS");
                     dismissKeyboard();
+                }
+
+                //APPLICATION STILL CRASHES WHEN I JUST CLICK CONVERT WITH FIELDS EMPTY
+                else if (TextUtils.isEmpty(EDITTEXT_SGD.getText()) & TextUtils.isEmpty(EDITTEXT_BKK.getText())){
+                    Toast.makeText(getApplicationContext(), "Both fields should not be empty!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -113,4 +121,6 @@ public class BangcockActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
